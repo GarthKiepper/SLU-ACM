@@ -23,8 +23,8 @@
             background: #3399ff !important;
         }
         #info{
-            padding-top: 3px;
-            padding-bottom: 3px;
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
         p, h1, h2, h3, h4, h5, h6, ul, a{
             font-family: serif;
@@ -33,12 +33,32 @@
             background-color: lightgrey;
             margin-top: 30px;
         }
-    </style>
+        .style_prevu_kit{
+            border:0;
+            position: relative;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1); 
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1); 
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1);
+            transition: all 200ms ease-in;
+            transform: scale(1);   
 
-    <!--[if IE]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        }
+        .style_prevu_kit:hover{
+            box-shadow: 0px 0px 150px #000000;
+            z-index: 2;
+            -webkit-transition: all 200ms ease-in;
+            -webkit-transform: scale(1.2);
+            -ms-transition: all 200ms ease-in;
+            -ms-transform: scale(1.2);   
+            -moz-transition: all 200ms ease-in;
+            -moz-transform: scale(1.2);
+            transition: all 200ms ease-in;
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 
 <body>
@@ -62,20 +82,20 @@
                     <li><a href="calendar.html">Calendar</a></li>
                     <li><a href="signup.html">Sign Up</a></li>
                 </ul>
-            </div><!--.nav-collapse -->
+            </div>
         </div>
     </nav>
     
     <!-- Content -->
-    <div class="container" style="background-color:white; border-radius: 15px">
-        <div class="starter-template" style="background-color: white; margin-bottom: 5px;">
+    <div class="container" style="background-color:white; border-radius: 15px; margin-top: 15px; padding-top: -15px;">
+        <div class="starter-template" style="background-color: white;">
             <h1 style="text-align: center;">Contact Us</h1>
             <h3 style="text-align: center;">If there are any questions or concerns that you would like to present directly to ACM Officers, feel free to get in contact with us at any time via our school email as provided below.</h3>
         </div>
             
         <div class="row-body">
             <!--Garth-->
-            <div id="info" class="col-md-12 img-rounded contact">
+            <div id="info" class="col-md-12 img-rounded contact style_prevu_kit">
                 <img src="Images for Use/No-profile.png" class="img-circle col-md-2 left-side" style="hieght:130px; width:130px;">
                 <div class="col-md-6">
                     <h3 class="col-md-6">Garth Keipper</h3>
@@ -86,7 +106,7 @@
             </div>
             
             <!-- Weston -->
-            <div id="info" class="col-md-12 img-rounded contact">
+            <div id="info" class="col-md-12 img-rounded contact style_prevu_kit">
                 <img src="Images for Use/No-profile.png" class="img-circle col-md-2" style="hieght:130px; width:130px;">
                 <div class="col-md-6">
                     <h3 class="col-md-6 right-side">Weston Arnold</h3>
@@ -97,7 +117,7 @@
             </div>
             
             <!--Steve-->
-            <div id="info" class="col-md-12 img-rounded contact">
+            <div id="info" class="col-md-12 img-rounded contact style_prevu_kit">
                 <img src="Images for Use/No-profile.png" class="img-circle col-md-2" style="hieght:130px; width:130px;">
                 <div class="col-md-6">
                     <h3 class="col-md-6 right-side">Steven Samrow</h3>
@@ -108,14 +128,14 @@
             </div>
             
             <!--Jacob-->
-            <div id="info" class="col-md-12 img-rounded contact" style="margin-bottom:15px;">
+            <div id="info" class="col-md-12 img-rounded contact style_prevu_kit" style="margin-bottom:15px;">
                 <img src="Images for Use/No-profile.png" class="img-circle col-md-2" style="hieght:130px; width:130px;">
                 <div class="col-md-6">
                     <h3 class="col-md-6 right-side">Jacob Nance</h3>
                     <h3 class="col-md-6 right-side" style="opacity:0.6;">Treasurer</h3>
                     <h4 class="col-md-12 right-side">Email: <a href="mailto:jacob.nance@selu.edu">jacob.nance@selu.edu</a></h4>
                 </div>
-                <h4 class="col-md-4">The Treasurer is responsible for handling the expenses of the ACM events, and managing the registration of students in to the ACM.</h4>
+                <h4 class="col-md-4">The Treasurer is responsible for handling the expenses of the ACM events and managing the registration of students into the ACM.</h4>
             </div>
         </div>
     </div>
