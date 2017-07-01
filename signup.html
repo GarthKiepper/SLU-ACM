@@ -9,10 +9,16 @@
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <style>
         body{
             padding-top:50px;
+<<<<<<< Updated upstream
             background-image: url(Images%20for%20use/blue_fade.jpg)
+=======
+            background-image: url("Images for Use/blue_fade.jpg");
+>>>>>>> Stashed changes
         }
         .starter-template{
             padding:40px 15px;text-align:center;
@@ -22,6 +28,18 @@
         }
         p, h1, h2, h3, h4, h5, h6, ul, a{
             font-family: serif;
+        }
+        form{
+
+        }
+        .input-field{
+           
+        }
+        .label{
+            font-weight: bold;   
+        }
+        .{
+            color: red;
         }
     </style>
 
@@ -55,6 +73,7 @@
         </div>
     </nav>
 
+<<<<<<< Updated upstream
     <div class="container" style="background-color:white; border-radius:15px">
     <center>
     <form style="width: 25%; padding-bottom: 10px;" action="" method="POST" enctype="multipart/form-data">
@@ -96,8 +115,108 @@
         <input id="submit_button" type="submit" value="Submit"/>
     </form>
 </center>
+=======
+    <div class="container" style="background-color:white;">
+        <form action="http://localhost/form.php" method="post">
+            <p><label>Full Name</label></p>
+            <p>
+                <input type="text" name="name_last" placeholder="Last" required/> 
+                <input type="text" name="name_first" placeholder="First" required/>
+                <input type="text" name="name_middle" placeholder="Middle"/>
+            <p>
+            
+            <p><label>Address</label></p>
+            <p>
+                <input type="text" name="address_street" placeholder="Street"/>
+                <input type="text" name="address_city" placeholder="City"/>
+                <input type="text" name="address_zip" placeholder="Zip"/>
+            </p>
+            <p><label>Phone:</label><input type="text" name="phone"/></p>
+            <p><label>Email:</label><input type="email" name="email" required/></p>
+            <p><label>W#:</label><input type="text" name="w_num" required/></p>
+            <p><label>Major:</label><input type="text" name="major"/></p>
+            <p><label>Minor:</label><input type="text" name="minor"/></p>
+            <p><label>Rank:</label>
+                <select name="rank" required>
+                    <option value="Freshman" selected>Freshman</option>
+                    <option value="Sophomore">Sophomore</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+                    <option value="Graduate">Graduate</option>
+                </select>
+            </p>
+            <div class="col-md-12"><label>Membership Type:</label></div>
+            <div class="col-md-3"><input type="radio" name="single_semester">Single Semester</div>
+            <div class="col-md-9"><input type="radio" name="full_year"> Full Year</div>
+            <input type="submit" value="submit"/>
+            <div id="paypal-button-container"></div>
+        </form>
+        
+        <!--
+            Name: Last  First   Middle
+            Adress: Street
+                    City    State   Zip
+            Phone:
+            Email:
+            W#:
+            Major:
+            Minor:
+            Rank: Freshman  Sophomore   Junior  Senior  Graduate
+            
+            Payment!!!
+        -->
+        
+        <!--Create an error response-->
+>>>>>>> Stashed changes
     </div>
+    
+    <script>
+        //Try to charge two different prices based on membership type
+        paypal.Button.render(
+        {
+            env: 'sandbox', // sandbox | production
 
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: 
+            {
+                sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+                production: '<insert production client id>'
+            },
+
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+
+            // payment() is called when the button is clicked
+            payment: function(data, actions) 
+            {
+                // Make a call to the REST api to create the payment
+                return actions.payment.create(
+                {
+                    payment: 
+                    {
+                        transactions: 
+                        [
+                            {
+                                amount: { total: '10.00', currency: 'USD' }
+                            }
+                        ]
+                    }
+                });
+            },
+
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function(data, actions) 
+            {
+                // Make a call to the REST api to execute the payment
+                return actions.payment.execute().then(function() 
+                {
+                    window.alert('Payment Complete!');
+                });
+            }
+        }, '#paypal-button-container');
+    </script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
