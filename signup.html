@@ -37,6 +37,9 @@
         .{
             color: red;
         }
+        #paypal-button-container{
+            margin-top: 15px;
+        }
     </style>
 
     <!--[if IE]>
@@ -69,49 +72,8 @@
         </div>
     </nav>
 
-<div class="container" style="background-color:white;">
-    <center>
-    <form style="width: 25%; padding-bottom: 10px;" action="" method="POST" enctype="multipart/form-data">
-        <div class="row">
-            <label for="name">Your Name:</label><br/>
-            <input id="name" class="input" name="name" type="text" value="" size="50" placeholder="First and Last Name"/><br/>
-        </div>
-        <div class="row">
-            <label for="major">Your Major</label><br/>
-            <input id="major" class="input" name="major" type="text" value="" size="50" placeholder="E.G. Computer Science"/><br/>
-        </div>
-        <div class="row">
-            <label for="email">Email Address:</label><br/>
-            <input id="email" class="input" name="email" type="text" value="" size="50" placeholder="Email Address"/><br/>
-        </div>
-        <div class="row">
-            <label for="GPA">Academic Standing (GPA)</label><br/>
-            <form action="action_page.php">
-             <center>
-             <input type="checkbox" name="gpa" value="4.0-3.5">4.0-3.5
-             <input type="checkbox" name="gpa" value="3.5-3.0">3.5-3.0
-             <input type="checkbox" name="gpa" value="3.0-2.5">3.0-2.5
-             <input type="checkbox" name="gpa" value="2.5-2.0">2.5-2.0
-             <input type="checkbox" name="gpa" value="2.0-1.5">2.0-1.5 
-             </center>     
-            </form>
-        </div>
-        <div class="row">
-            <label for="Rank">Student Rank</label><br/>
-            <form action="action_page.php">
-             <center>
-             <input type="checkbox" name="rank" value="freshman">Freshman
-             <input type="checkbox" name="rank" value="sophmore">Sophmore
-             <input type="checkbox" name="rank" value="junior">Junior
-             <input type="checkbox" name="rank" value="senior">Senior 
-             </center>     
-            </form>
-        </div>
-        <input id="submit_button" type="submit" value="Submit"/>
-    </form>
-</center>
-</div>      
-    <div class="container" style="background-color:white;">
+
+    <div class="container" style="background-color:white; border-radius: 15px; margin-top: 15px; padding-top: -15px;">
         <form action="http://localhost/form.php" method="post">
             <p><label>Full Name</label></p>
             <p>
@@ -126,12 +88,22 @@
                 <input type="text" name="address_city" placeholder="City"/>
                 <input type="text" name="address_zip" placeholder="Zip"/>
             </p>
-            <p><label>Phone:</label><input type="text" name="phone"/></p>
-            <p><label>Email:</label><input type="email" name="email" required/></p>
-            <p><label>W#:</label><input type="text" name="w_num" required/></p>
-            <p><label>Major:</label><input type="text" name="major"/></p>
-            <p><label>Minor:</label><input type="text" name="minor"/></p>
-            <p><label>Rank:</label>
+            <p style="margin-top: 20px;"><b>Phone:</b></p>
+            <p><input type="text" name="phone"/></p>
+            
+            <p><b>Email:</b></p>
+            <p><input type="email"name="email" required/></p>
+            
+            <p><b>W#:</b></p>
+            <p><input type="text" name="w_num" required/></p>
+            
+            <p><b>Major:</b></p>
+            <p><input type="text" name="major"/></p>
+            
+            <p><b>Minor:</b></p>
+            <p><input type="text" name="minor"/></p>
+            
+            <p><b>Rank:</b></p>
                 <select name="rank" required>
                     <option value="Freshman" selected>Freshman</option>
                     <option value="Sophomore">Sophomore</option>
@@ -139,11 +111,12 @@
                     <option value="Senior">Senior</option>
                     <option value="Graduate">Graduate</option>
                 </select>
-            </p>
-            <div class="col-md-12"><label>Membership Type:</label></div>
+
+            <p style="margin-top: 10px;"><b>Membership Type:</b></p>
+            <div class="col-md-12"></div>
             <div class="col-md-3"><input type="radio" name="single_semester">Single Semester</div>
             <div class="col-md-9"><input type="radio" name="full_year"> Full Year</div>
-            <input type="submit" value="submit"/>
+            <input type="submit" style="margin-top: 15px;" value="submit"/>
             <div id="paypal-button-container"></div>
         </form>
         
